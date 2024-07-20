@@ -32,6 +32,7 @@ export default function AddIngredient({}){
   //Error states:
   const [titleError, setTitleError] = useState<string>('');
   const [purchasedInError, setPurchasedInError] = useState<string>('');
+  const [noMeasurementsError, setNoMeasurementsError] = useState<string>('');
 
   //construct ratio options from measurements:
   let options = [];
@@ -64,6 +65,11 @@ export default function AddIngredient({}){
     }
 
     //Check the ingredient measurement entries are complete:
+    if(measurements.length === 0){
+      errorFound = true;
+      setNoMeasurementsError('Please enter at least one measurement.');
+    }
+
     let newMeasurements = [...measurements];
     let measurementChangeMade = false;
     for(let i = 0; i<newMeasurements.length; i++){
@@ -154,7 +160,9 @@ export default function AddIngredient({}){
               </div>
             );
           })}
+          {typeof noMeasurementsError === 'string' && noMeasurementsError.length > 0 && <p className={`text-red`}>{noMeasurementsError}</p>}
           <Button className={`mt-2 bg-white border border-green-dark`} onClick={()=>{
+              setNoMeasurementsError('');
               let maxIndex =  -1;
               for(let i = 0; i<measurements.length; i++){
                 if(maxIndex < measurements[i].id){
