@@ -25,7 +25,7 @@ export default function Page({ subPages }: PageProps){
       <button onClick={()=>{
           setContentIndex(index);
         }}
-        className={`${selected ? `font-semibold` : ``} hover:bg-[#ededed] w-full text-left p-2 rounded-md transition-colors whitespace-nowrap`}
+        className={`${selected ? `font-semibold` : ``} hover:bg-[#ededed] w-full text-left p-2 rounded-md transition-colors whitespace-nowrap text-green-dark`}
       >
         {title}
       </button>

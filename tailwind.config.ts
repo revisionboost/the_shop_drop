@@ -28,6 +28,12 @@ const config = {
         yellow: '#F2CA52',
         grey: {
           DEFAULT: '#e5e7eb',
+        },
+        red: {
+          DEFAULT: '#C30000'
+        },
+        white: {
+          DEFAULT: "#FFFFFF"
         }
       },
       fontFamily: {

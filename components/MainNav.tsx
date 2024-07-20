@@ -39,10 +39,6 @@ export default function MainNav({}: Props): JSX.Element{
             label: 'Ingredients',
             href: '/ingredients'
         },
-        {
-            label: 'Units',
-            href: '/units'
-        },
     ];
 
 
